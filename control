@@ -1,6 +1,6 @@
 Package: com.nahtedetihw.musicartworksave
 Name: MusicArtworkSave
-Version: 1.0
+Version: 1.1
 Architecture: iphoneos-arm
 Description: Save Album Artwork in Music.app
 Maintainer: Ethan Whited

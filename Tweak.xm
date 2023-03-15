@@ -42,7 +42,7 @@ UIImage *artworkImage;
     saveButton.layer.masksToBounds = YES;
     saveButton.layer.cornerRadius = saveButton.frame.size.width/2;
     saveButton.userInteractionEnabled = YES;
-    saveButton.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.3];
+    saveButton.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.1];
     UIImage *oldImage = [UIImage systemImageNamed:@"photo.circle"];
     UIImage *newImage = [UIImage systemImageNamed:@"checkmark.circle"];
     [saveButton setImage:oldImage forState:UIControlStateNormal];
@@ -53,7 +53,7 @@ UIImage *artworkImage;
     [saveButton.widthAnchor constraintEqualToConstant:30].active = true;
     [saveButton.heightAnchor constraintEqualToConstant:30].active = true;
     [saveButton.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-25].active = true;
-    [saveButton.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:30].active = true;
+    [saveButton.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:40].active = true;
 }
 
 %new
@@ -91,7 +91,7 @@ UIImage *artworkImage;
     saveButton.layer.masksToBounds = YES;
     saveButton.layer.cornerRadius = saveButton.frame.size.width/2;
     saveButton.userInteractionEnabled = YES;
-    saveButton.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.3];
+    saveButton.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.1];
     UIImage *oldImage = [UIImage systemImageNamed:@"photo.circle"];
     UIImage *newImage = [UIImage systemImageNamed:@"checkmark.circle"];
     [saveButton setImage:oldImage forState:UIControlStateNormal];
@@ -102,7 +102,7 @@ UIImage *artworkImage;
     [saveButton.widthAnchor constraintEqualToConstant:30].active = true;
     [saveButton.heightAnchor constraintEqualToConstant:30].active = true;
     [saveButton.rightAnchor constraintEqualToAnchor:self.view.rightAnchor constant:-25].active = true;
-    [saveButton.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:30].active = true;
+    [saveButton.topAnchor constraintEqualToAnchor:self.view.topAnchor constant:40].active = true;
 }
 
 %new
@@ -112,7 +112,7 @@ UIImage *artworkImage;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         sender.selected = NO;
     });
-    UIImageWriteToSavedPhotosAlbum(artworkImage, nil, nil, nil);
+    if (artworkImage != nil) UIImageWriteToSavedPhotosAlbum(artworkImage, nil, nil, nil);
 }
 %end
 %end
